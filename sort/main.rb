@@ -86,6 +86,28 @@ def merge(a1, i1, j1, a2, i2, j2)
     return b
 end
 
+#クイックソート
+def quicksort(a, i, j)
+    if j <= i then
+        # do nothing
+    else
+        pivot = a[j]
+        s = i
+        i.step(j-1) do |k|
+            if a[k] <= pivot then
+                swap(a, s, k)
+                s = s + 1
+            end
+        end
+        swap(a, j, s)
+        quicksort(a, i, s-1)
+        quicksort(a, s+1, j)
+    end
+end
+
+
+
+#時間計測用
 def randarray(n)
     return Array.new(n) do rand(10000) end
 end
