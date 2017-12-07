@@ -97,9 +97,36 @@ def bench(count)
     puts t2 - t1
 end
 
+#クイックソート
+def quicksort(a, i, j)
+    if j <= i then
+        # do nothing
+    else
+        pivot = a[j]
+        s = i
+        i.step(j-1) do |k|
+            if a[k] <= pivot then
+                swap(a, s, k)
+                s = s + 1
+            end
+        end
+        swap(a, j, s)
+        quicksort(a, i, s-1)
+        quicksort(a, s+1, j)
+    end
+end
 
+#ビンソート
+def binsort(a, i, j)
+    (j-i+1).times do |k|
+        a.each do |l|
+            if l == i+k
+                count[i+k]++
+            end
+        end
+    end
 
-
+end
 
 
 
