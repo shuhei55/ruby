@@ -108,20 +108,20 @@ end
 #ビンソート
 def binsort(a)
     count = Array.new(10, 0)
-    c = Array.new
     a.each do |i|
         count[i] = count[i] + 1
     end
+
+    a.length.times do 
+        a.pop
+    end
+
     10.times do |i|
         count[i].times do
-            c.push(i)
+            a.push(i)
         end
     end
-    p(c)
     p(a)
-    a = c
-    p(a)
-    p(c)
     return 0
 end
 
