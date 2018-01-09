@@ -91,6 +91,8 @@ def quicksort(a, i, j)
     if j <= i then
         # do nothing
     else
+        p = i + rand(j - i + 1)
+        swap(a, p, j)
         pivot = a[j]
         s = i
         i.step(j-1) do |k|
