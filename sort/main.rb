@@ -108,6 +108,26 @@ def quicksort(a, i, j)
 end
 
 
+#ビンソート
+def binsort(a)
+    count = Array.new(10, 0)
+    a.each do |i|
+        count[i] = count[i] + 1
+    end
+
+    a.length.times do 
+        a.pop
+    end
+p
+    10.times do |i|
+        count[i].times do
+            a.push(i)
+        end
+    end
+    p(a)
+    return 0
+end
+
 
 #時間計測用
 def randarray(n)
