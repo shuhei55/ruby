@@ -17,8 +17,10 @@ def alliance (s, t)
             if s[j-1] == t[i-1] then
                 val = a[i-1][j-1] + 2
             else
-                if s[j-1] == t[i] && t[i-1] == s[j]
-                    val = a[i-2][j-2] + 1
+                if i >= 2 && j >= 2
+                    if s[j-1] == t[i-2] && t[i-1] == s[j-2]
+                        val = a[i-2][j-2] + 1
+                    end
                 end
                 if val < max(a[i-1][j-1]-1, a[i-1][j]-2, a[i][j-1]-2)
                     val = max(a[i-1][j-1]-1, a[i-1][j]-2, a[i][j-1]-2)
@@ -27,6 +29,8 @@ def alliance (s, t)
             a[i][j] = val
         end
     end
+    p(a[1][1])
+    p(a[2][2])
     p(a[t.length][s.length])
 end
 
