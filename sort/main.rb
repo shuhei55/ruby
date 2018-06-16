@@ -118,7 +118,7 @@ def binsort(a)
     a.length.times do 
         a.pop
     end
-p
+
     10.times do |i|
         count[i].times do
             a.push(i)
