@@ -1,0 +1,4 @@
+sudo gem install neovim
+sudo gem install slack-api
+sudo apt install ruby-dev
+sudo apt install ruby
